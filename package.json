@@ -1,0 +1,44 @@
+{
+  "name": "smart-student-deadline-tracker",
+  "version": "1.0.0",
+  "description": "Smart Student Deadline Tracker (DeadlineWise) - Fullstack & DevOps College Project",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev:server": "node --watch src/server.js",
+    "dev:client": "npm --prefix client run dev",
+    "dev": "concurrently -n \"API,VITE\" -c \"blue,cyan\" \"npm run dev:server\" \"npm run dev:client\"",
+    "build:client": "npm --prefix client run build",
+    "build": "npm run build:client",
+    "install:all": "npm install && npm --prefix client install",
+    "test": "node --test tests/**/*.test.js",
+    "test:unit": "node --test tests/unit/**/*.test.js",
+    "test:integration": "node --test tests/integration/**/*.test.js",
+    "seed": "node src/db/seed.js",
+    "db:init": "node src/db/init.js"
+  },
+  "keywords": [
+    "student-tracker",
+    "deadlines",
+    "react",
+    "express",
+    "postgresql",
+    "devops",
+    "github-actions"
+  ],
+  "author": "Student Developer",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "supertest": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
